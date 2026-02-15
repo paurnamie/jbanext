@@ -70,7 +70,7 @@ const programData = [
 
 export function ProgramsSection() {
     return (
-        <section className="py-24 bg-background overflow-hidden">
+        <section id="programs" className="py-24 bg-background overflow-hidden">
             <div className="container px-4 md:px-6 mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
