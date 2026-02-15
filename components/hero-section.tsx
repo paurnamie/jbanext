@@ -149,6 +149,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 className="bg-foreground text-background hover:bg-foreground/90 font-semibold px-8 py-6 text-base rounded-full group"
+                onClick={() => window.open('https://wa.me/919745216499?text=Hi%2C%20I%20want%20to%20start%20training', '_blank')}
               >
                 Start Training
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

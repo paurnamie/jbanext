@@ -94,6 +94,7 @@ export function DoctorsSection() {
 
                     <Button
                       className="w-full bg-white text-black hover:bg-white/90 font-semibold rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0"
+                      onClick={() => window.open(`https://wa.me/919745216499?text=Hi%2C%20I%20want%20to%20book%20a%20session%20with%20${encodeURIComponent(doctor.name)}`, '_blank')}
                     >
                       <Calendar className="w-4 h-4 mr-2" />
                       Book Session

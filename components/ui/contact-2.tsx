@@ -1,5 +1,6 @@
-import React from "react";
+"use client";
 
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -20,8 +21,35 @@ export const Contact2 = ({
     email = "jamesbadmintonacademy@gmail.com",
     web = { label: "jamesbadmintonacademy.com", url: "https://jamesbadmintonacademy.com" },
 }: Contact2Props) => {
+    const [formData, setFormData] = useState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        subject: "",
+        message: ""
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({ ...prev, [id]: value }));
+    };
+
+    const handleSubmit = () => {
+        const { firstname, lastname, email, subject, message } = formData;
+        const fullName = `${firstname} ${lastname}`.trim();
+
+        const text = `*New Key Enquiry from Website*
+Name: ${fullName}
+Email: ${email}
+Subject: ${subject}
+Message: ${message}`;
+
+        const encodedText = encodeURIComponent(text);
+        window.open(`https://wa.me/919745216499?text=${encodedText}`, '_blank');
+    };
+
     return (
-        <section className="relative py-32 overflow-hidden">
+        <section id="contact" className="relative py-32 overflow-hidden">
             {/* Mesh Gradient Background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl mix-blend-multiply animate-blob" />
@@ -69,26 +97,63 @@ export const Contact2 = ({
                         <div className="flex flex-col sm:flex-row gap-4">
                             <div className="grid w-full items-center gap-2">
                                 <Label htmlFor="firstname" className="text-sm font-medium">First Name</Label>
-                                <Input type="text" id="firstname" placeholder="John" className="bg-white/50" />
+                                <Input
+                                    type="text"
+                                    id="firstname"
+                                    placeholder="John"
+                                    className="bg-white/50"
+                                    value={formData.firstname}
+                                    onChange={handleChange}
+                                />
                             </div>
                             <div className="grid w-full items-center gap-2">
                                 <Label htmlFor="lastname" className="text-sm font-medium">Last Name</Label>
-                                <Input type="text" id="lastname" placeholder="Doe" className="bg-white/50" />
+                                <Input
+                                    type="text"
+                                    id="lastname"
+                                    placeholder="Doe"
+                                    className="bg-white/50"
+                                    value={formData.lastname}
+                                    onChange={handleChange}
+                                />
                             </div>
                         </div>
                         <div className="grid w-full items-center gap-2">
                             <Label htmlFor="email" className="text-sm font-medium">Email</Label>
-                            <Input type="email" id="email" placeholder="john@example.com" className="bg-white/50" />
+                            <Input
+                                type="email"
+                                id="email"
+                                placeholder="john@example.com"
+                                className="bg-white/50"
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
                         </div>
                         <div className="grid w-full items-center gap-2">
                             <Label htmlFor="subject" className="text-sm font-medium">Subject</Label>
-                            <Input type="text" id="subject" placeholder="How can we help?" className="bg-white/50" />
+                            <Input
+                                type="text"
+                                id="subject"
+                                placeholder="How can we help?"
+                                className="bg-white/50"
+                                value={formData.subject}
+                                onChange={handleChange}
+                            />
                         </div>
                         <div className="grid w-full gap-2">
                             <Label htmlFor="message" className="text-sm font-medium">Message</Label>
-                            <Textarea placeholder="Type your message here..." id="message" className="min-h-[150px] bg-white/50 resize-none" />
+                            <Textarea
+                                placeholder="Type your message here..."
+                                id="message"
+                                className="min-h-[150px] bg-white/50 resize-none"
+                                value={formData.message}
+                                onChange={handleChange}
+                            />
                         </div>
-                        <Button className="w-full h-12 text-base font-medium shadow-md hover:shadow-lg transition-all mt-2">
+                        <Button
+                            className="w-full h-12 text-base font-medium shadow-md hover:shadow-lg transition-all mt-2"
+                            onClick={handleSubmit}
+                        >
                             Send Message
                         </Button>
                     </div>

@@ -70,7 +70,10 @@ export function Navigation() {
                 transition={{ delay: 0.5, duration: 0.4 }}
                 className="hidden md:block"
               >
-                <Button className="bg-foreground text-background hover:bg-foreground/90 font-medium px-5 py-2 h-9 text-sm rounded-full">
+                <Button
+                  className="bg-foreground text-background hover:bg-foreground/90 font-medium px-5 py-2 h-9 text-sm rounded-full"
+                  onClick={() => window.open('https://wa.me/919745216499?text=Hi%2C%20I%20want%20to%20enroll%20now', '_blank')}
+                >
                   Enroll Now
                 </Button>
               </motion.div>
@@ -99,7 +102,10 @@ export function Navigation() {
                       {link.name}
                     </a>
                   ))}
-                  <Button className="bg-foreground text-background hover:bg-foreground/90 font-medium rounded-full mt-2">
+                  <Button
+                    className="bg-foreground text-background hover:bg-foreground/90 font-medium rounded-full mt-2"
+                    onClick={() => window.open('https://wa.me/919745216499?text=Hi%2C%20I%20want%20to%20enroll%20now', '_blank')}
+                  >
                     Enroll Now
                   </Button>
                 </div>

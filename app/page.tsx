@@ -71,8 +71,8 @@ export default function Home() {
       <Contact2
         title="Get in Touch"
         description="Interested in joining James Badminton Academy? Contact us to discuss your training goals and enroll today."
-        phone="+91 98765 43210"
-        email="jamesbadmintonacademy@gmail.com"
+        phone="97452 16499"
+        email="Jamesacademyy@gmail.com"
         web={{ label: "jamesbadmintonacademy.com", url: "https://jamesbadmintonacademy.com" }}
       />
       <Footer />

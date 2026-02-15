@@ -116,7 +116,10 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
                                                 {subtitle}
                                             </p>
                                         )}
-                                        <button className="mt-3 md:mt-6 px-4 py-1.5 md:px-6 md:py-3 text-xs md:text-base bg-white text-black font-semibold rounded-full hover:bg-white/90 transition-colors shadow-lg">
+                                        <button
+                                            className="mt-3 md:mt-6 px-4 py-1.5 md:px-6 md:py-3 text-xs md:text-base bg-white text-black font-semibold rounded-full hover:bg-white/90 transition-colors shadow-lg"
+                                            onClick={() => window.open('https://wa.me/919745216499?text=Hi%2C%20I%20want%20to%20book%20an%20appointment', '_blank')}
+                                        >
                                             Book Appointment
                                         </button>
                                     </motion.div>

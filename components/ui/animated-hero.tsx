@@ -39,7 +39,12 @@ function Hero() {
                     {/* Text Content */}
                     <div className="flex gap-8 flex-col items-center lg:items-start text-center lg:text-left">
                         <div>
-                            <Button variant="secondary" size="sm" className="gap-4">
+                            <Button
+                                variant="secondary"
+                                size="sm"
+                                className="gap-4"
+                                onClick={() => window.open('https://wa.me/919745216499?text=Hi%2C%20I%20want%20to%20join%20Elite%20Training', '_blank')}
+                            >
                                 Join Elite Training <MoveRight className="w-4 h-4" />
                             </Button>
                         </div>
@@ -77,10 +82,26 @@ function Hero() {
                             </p>
                         </div>
                         <div className="flex flex-row gap-3">
-                            <Button size="lg" className="gap-4" variant="outline">
+                            <Button
+                                size="lg"
+                                className="gap-4"
+                                variant="outline"
+                                onClick={() => window.open('https://wa.me/919745216499?text=Hi%2C%20I%20want%20to%20book%20a%20session', '_blank')}
+                            >
                                 Book a Session <PhoneCall className="w-4 h-4" />
                             </Button>
-                            <Button size="lg" className="gap-4">
+                            <Button
+                                size="lg"
+                                className="gap-4"
+                                onClick={() => {
+                                    const programsSection = document.getElementById('programs');
+                                    if (programsSection) {
+                                        programsSection.scrollIntoView({ behavior: 'smooth' });
+                                    } else {
+                                        window.open('https://wa.me/919745216499?text=Hi%2C%20I%20want%20to%20know%20about%20your%20programs', '_blank');
+                                    }
+                                }}
+                            >
                                 View Programs <MoveRight className="w-4 h-4" />
                             </Button>
                         </div>

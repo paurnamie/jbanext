@@ -73,6 +73,7 @@ export function SaleBanner() {
               <Button
                 size="lg"
                 className="bg-foreground text-background hover:bg-foreground/90 font-medium px-6 py-5 text-sm rounded-full group"
+                onClick={() => window.open('https://wa.me/919745216499?text=Hi%2C%20tell%20me%20more%20details%20about%20your%20programs', '_blank')}
               >
                 More Details
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
