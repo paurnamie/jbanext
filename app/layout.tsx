@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jamesbadmintonacademy.com"),
   title: {
     default: "James Badminton Academy | Premier Coaching & Training in Kochi",
     template: "%s | James Badminton Academy"
