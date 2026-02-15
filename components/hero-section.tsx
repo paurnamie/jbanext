@@ -110,7 +110,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative text-7xl sm:text-7xl lg:text-8xl font-medium tracking-tight text-foreground mb-6"
+              className="relative text-5xl sm:text-7xl lg:text-8xl font-medium tracking-tight text-foreground mb-6"
               style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
             >
               {/* Depth shadow layers */}
